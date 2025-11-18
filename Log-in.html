@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log In – Pizel Gaxe</title>
+  <link rel="stylesheet" href="log-in style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h1 class="logo">Pixel Gaxe</h1>
+      <p class="subtitle">Welcome back! Please log in to continue.</p>
+
+      <form id="loginForm">
+        <input type="text" placeholder="Email or Username" required />
+        <input type="password" placeholder="Password" required />
+        <button type="submit">Log In</button>
+      </form>
+
+      <div class="forgot">
+        <a href="#">Forgot password?</a>
+      </div>
+    </div>
+
+    
+
+    <div class="redirect-box">
+      Don’t have an account? <a href="Sign-up project.html">Sign up</a>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Log-in successful! (demo)");
+    });
+  </script>
+</body>
+</html>

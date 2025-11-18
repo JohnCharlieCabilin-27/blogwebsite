@@ -1,0 +1,109 @@
+/* --- GLOBAL --- */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+body {
+  height: 100vh;
+  display: flex; justify-content: center; align-items: center;
+  background: linear-gradient(135deg, #072db5, #dd2a7b, #8134af, #05e37c);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+/* --- CONTAINER --- */
+.container {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 16px; width: 100%; max-width: 400px;
+}
+
+/* --- FORM BOX --- */
+.form-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 40px 32px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+.logo {
+  font-size: 38px;
+  font-weight: 600;
+  color: #4169e1;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 22px;
+}
+
+/* --- FORM --- */
+form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fafafa;
+  transition: border-color 0.3s ease;
+}
+form input:focus {
+  border-color: #4169e1;
+  outline: none;
+  background: #fff;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background: #4169e1;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+form button:hover {
+  background: #365fd6;
+  transform: translateY(-1px);
+}
+
+/* --- TERMS --- */
+.terms {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #777;
+}
+.terms a { color: #4169e1; text-decoration: none; }
+.terms a:hover { text-decoration: underline; }
+
+/* --- REDIRECT BOX --- */
+.redirect-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 16px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.redirect-box a {
+  color: #4169e1;
+  font-weight: 600;
+  text-decoration: none;
+}
+.redirect-box a:hover { text-decoration: underline; }

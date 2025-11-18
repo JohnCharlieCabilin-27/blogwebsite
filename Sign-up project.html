@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account – Pixel Gaxe</title>
+  <link rel="stylesheet" href="Sign-up project style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h1 class="logo">Pixel Gaxe</h1>
+      <p class="subtitle">Join the community — connect, share, and inspire.</p>
+
+      <form id="signupForm" autocomplete="on">
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email address" required />
+        <input type="text" placeholder="Username" required />
+        <input type="password" placeholder="Password" required minlength="6" />
+        <button type="submit">Create Account</button>
+      </form>
+
+      <p class="terms">
+        By signing up, you agree to our 
+        <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.
+      </p>
+    </div>
+
+    <div class="redirect-box">
+      Already have an account? <a href="Log-in.html">Log in</a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Sign-up successful! (demo)");
+    });
+  </script>
+</body>
+</html>

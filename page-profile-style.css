@@ -1,0 +1,93 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+body {
+    background: linear-gradient(135deg, #d5dade, #dfeeb9, #8dc0a2);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Profile Card */
+.profile-card {
+    background: #fff;
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px 20px 40px;
+    position: relative;
+}
+
+/* Profile Image */
+.profile-img img {
+    width: 170px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    object-fit: cover;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Name and Info */
+.name {
+    margin-top: 70px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #333;
+}
+
+.location {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.info {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stats div h3 {
+    color: #333;
+    font-size: 18px;
+}
+
+.stats div p {
+    color: #888;
+    font-size: 13px;
+}
+
+/* Button */
+.show-more {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.show-more:hover {
+    transform: scale(1.05);
+}
