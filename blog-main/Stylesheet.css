@@ -108,6 +108,101 @@ a:hover {
     font-weight: 400;
 }
 
+/* Toggle switch styling (small moon icon) */
+/* Toggle (moon + small square checkbox) placed inline with nav */
+.toggle-item { display: flex; align-items: center; }
+.toggle-switch { display: inline-flex; align-items: center; }
+.toggle-switch input { display: none; }
+.toggle-label { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; user-select: none; }
+.toggle-label .moon { font-size: 16px; line-height: 1; }
+
+/* small square box next to moon that shows a check when enabled */
+.toggle-label .checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #555;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+/* when the hidden checkbox is checked, show a white checkmark inside the small box */
+input#darkModeToggle:checked + .toggle-label .checkbox {
+    background: #2c3e50;
+    border-color: #2c3e50;
+}
+input#darkModeToggle:checked + .toggle-label .checkbox::after {
+    content: '\2713'; /* check mark */
+    position: absolute;
+    left: 2px;
+    top: -2px;
+    color: white;
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* DARK MODE overrides */
+
+/* Stronger dark-mode rules: make text visible (white) and adjust backgrounds */
+body.dark-mode {
+    background-color: #0f0f10;
+    color: #ffffff;
+}
+
+/* make almost all textual content white for visibility in dark mode */
+body.dark-mode * {
+    color: #ffffff !important;
+}
+
+body.dark-mode .main-header {
+    background-color: #111213 !important;
+}
+
+body.dark-mode .latest-news {
+    box-shadow: none;
+    background-image: none;
+    background-color: #161618;
+}
+
+body.dark-mode .post-card,
+body.dark-mode .posts-grid .post-card,
+body.dark-mode .blog-post,
+body.dark-mode .sidebar {
+    background: #171717 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
+}
+
+body.dark-mode .share-info {
+    background: #1f1f1f !important;
+    border-color: #2b2b2b !important;
+}
+
+body.dark-mode a { color: #9ecbff !important; }
+
+/* Keep heart icons red even when dark mode applies global white color */
+body.dark-mode .share-info .fas.fa-heart {
+    color: #e74c3c !important;
+    text-shadow: 0 0 6px rgba(231,76,60,0.25);
+}
+
+/* Search overlay dark-mode styles */
+body.dark-mode .search-overlay {
+    background-color: #111314 !important;
+    color: #fff !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6) !important;
+}
+body.dark-mode .search-box {
+    border-color: #2b2b2b !important;
+    background: #151515 !important;
+}
+body.dark-mode #search-input {
+    color: #fff !important;
+}
+
+
 /* --- SEPARATOR LINE --- */
 .divider {
     height: 1px;
@@ -237,38 +332,68 @@ a:hover {
 
 
 /* --- SEARCH OVERLAY STYLES (CENTERED & COLORFUL) --- */
+
 .search-overlay {
-    display: none; 
-    position: fixed; 
-    top: 70px; 
+    display: none;
+    position: fixed;
+    top: 70px;
     left: 0;
     width: 100%;
-    height: 60px; 
-    background-color: white;
-    z-index: 1000; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
+    padding: 8px 0; /* allow vertical breathing space so oval doesn't clip */
+    background: transparent; /* make overlay transparent; search-box provides visible background */
+    z-index: 1000;
     align-items: center;
     justify-content: center;
+    pointer-events: none; /* default to avoid intercepting clicks when hidden */
+}
+
+.search-overlay[style*="display: flex"] {
+    pointer-events: auto; /* enable interactions when visible */
 }
 
 .search-box {
     display: flex;
-    width: 70%; 
-    max-width: 800px;
-    border: 1px solid #3498db; 
-    border-radius: 30px;
-    padding: 2px 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    align-items: center;
+    width: 78%;
+    max-width: 980px;
+    height: 56px;
+    border-radius: 999px; /* perfect oval */
+    padding: 6px 18px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    background: white;
+    border: 1px solid #3498db;
 }
 
 #search-input {
-    flex-grow: 1;
+    flex: 1;
+    height: 100%;
+    background: transparent;
     border: none;
     outline: none;
-    padding: 10px 15px;
-    font-size: 1.1em;
+    padding: 0 12px;
+    font-size: 1.05rem;
     color: var(--text-dark);
+    caret-color: #007a91; /* visible caret in light mode */
+}
+
+#search-input::placeholder {
+    color: #9aa8b2;
+}
+
+/* Dark-mode adjustments for visibility inside the oval */
+body.dark-mode .search-box {
+    background: #121213 !important;
+    border-color: #2b2b2b !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5) !important;
+}
+
+body.dark-mode #search-input {
+    color: #ffffff !important;
+    caret-color: #ffffff !important;
+}
+
+body.dark-mode #search-input::placeholder {
+    color: rgba(255,255,255,0.6) !important;
 }
 
 .search-box button {
